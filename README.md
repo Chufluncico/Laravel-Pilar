@@ -1,29 +1,22 @@
-# Proyecto Laravel
+# Laravel Pilar
 
-## Requisitos
+Laravel Pilar es un punto de partida para tu proxima aplicacion Laravel.
+Utiliza el kit de inicio Livewire e implementa la gestion de permisos mediante Spatie.
 
-* PHP >= 8.x
-* Composer
-* Node.js
-
-## Instalación
+## Instalación y arranque
 
 ```bash
-git clone <repo>
-cd proyecto
+git clone https://github.com/Chufluncico/Laravel-Pilar.git
 
 composer install
-cp .env.example .env
-php artisan key:generate
 
 npm install
 npm run build
 
-php artisan migrate
+/* Configurar archivio .env */
+
+php artisan migrate --seed
+
+composer run dev
 ```
 
-## Ejecutar
-
-```bash
-php artisan serve
-```
