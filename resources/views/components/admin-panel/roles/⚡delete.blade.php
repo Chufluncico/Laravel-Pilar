@@ -44,16 +44,16 @@ new class extends Component {
 <flux:modal wire:model.self="showModal">
     <div class="space-y-6">
         <flux:heading size="lg">
-            Eliminar rol
+            {{ __('Delete rol') }}
         </flux:heading>
 
         <flux:text>
-            ¿Seguro que quieres eliminar el rol <strong>{{ $role?->name }}</strong>?
+            {{ __('Are you sure you want to remove the') }} <strong>{{ $role?->name }}</strong> {{ __('role') }}?
         </flux:text>
 
         <div class="flex justify-end gap-3">
             <flux:button wire:click="$set('showModal', false)">
-                Cancelar
+                {{ __('Cancel') }}
             </flux:button>
 
             <flux:button 
@@ -61,7 +61,7 @@ new class extends Component {
                 wire:click="delete"
                 wire:loading.attr="disabled"
             >
-                Eliminar
+                {{ __('Delete') }}
             </flux:button>
         </div>
     </div>

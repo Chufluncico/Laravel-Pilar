@@ -63,28 +63,28 @@ new class extends Component {
 <flux:modal wire:model.self="showModal">
     <div class="space-y-6">
         <flux:heading size="lg">
-            Cambiar contraseña
+            {{ __('Change password') }}
         </flux:heading>
 
         <flux:input 
             wire:model="password"
             type="password"
-            label="Nueva contraseña"
+            label="{{ __('New password') }}"
         />
 
         <flux:input 
             wire:model="password_confirmation"
             type="password"
-            label="Confirmar contraseña"
+            label="{{ __('Password confirmation') }}"
         />
 
         <div class="flex justify-end gap-3">
             <flux:button wire:click="$set('showModal', false)">
-                Cancelar
+                {{ __('Cancel') }}
             </flux:button>
 
             <flux:button variant="primary" wire:click="updatePassword" wire:loading.attr="disabled">
-                Guardar
+                {{ __('Save') }}
             </flux:button>
         </div>
     </div>

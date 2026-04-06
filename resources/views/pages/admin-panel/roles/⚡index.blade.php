@@ -74,7 +74,7 @@ new #[Title('Roles Administration')] class extends Component
                         variant="primary"
                         wire:click="$dispatch('create-role')"
                     >
-                        Nuevo rol
+                        {{ __('Add rol') }}
                     </flux:button>
                 @endcan
             </div>
@@ -87,12 +87,12 @@ new #[Title('Roles Administration')] class extends Component
                         :direction="$sortDirection" 
                         wire:click="sort('name')"
                     >
-                        Nombre
+                        {{ __('Role name') }}
                     </flux:table.column>
 
-                    <flux:table.column>Usuarios</flux:table.column>
+                    <flux:table.column>{{ __('Users') }}</flux:table.column>
 
-                    <flux:table.column>Permisos</flux:table.column>
+                    <flux:table.column>{{ __('Permissions') }}</flux:table.column>
 
                     <flux:table.column />
                 </flux:table.columns>

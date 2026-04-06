@@ -95,13 +95,13 @@ new class extends Component {
 <flux:modal wire:model.self="showModal">
     <div class="space-y-6">
         <flux:heading size="lg">
-            Editar rol
+            {{ __('Edit rol') }}
         </flux:heading>
 
         <flux:input wire:model="name" label="Nombre del rol" />
 
         <div>
-            <label class="block text-sm mb-2">Permisos</label>
+            <label class="block text-sm mb-2">{{ __('Permissions') }}</label>
 
             <div class="space-y-4">
                 @foreach($this->groupedPermissions as $module => $permissions)
@@ -133,11 +133,11 @@ new class extends Component {
 
         <div class="flex justify-end gap-3">
             <flux:button type="button" wire:click="$set('showModal', false)">
-                Cancelar
+                {{ __('Cancel') }}
             </flux:button>
 
             <flux:button variant="primary" wire:click="edit" wire:loading.attr="disabled">
-                Guardar
+                {{ __('Save') }}
             </flux:button>
         </div>
     </div>

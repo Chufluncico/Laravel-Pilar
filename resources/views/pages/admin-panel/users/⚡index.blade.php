@@ -72,7 +72,7 @@ new #[Title('Users Administration')] class extends Component
             <div class="flex mb-4">
                 <flux:input class="flex-1"
                     wire:model.live.debounce.300ms="search"
-                    placeholder="Buscar usuario..."
+                    placeholder="{{ __('Search user') }}..."
                     clearable
                 />
 
@@ -82,27 +82,25 @@ new #[Title('Users Administration')] class extends Component
                     <flux:button variant="primary"
                         wire:click="$dispatch('create-user')"
                     >
-                        Nuevo usuario
+                        {{ __('Add user') }}
                     </flux:button>
                 @endcan
             </div>
 
             <flux:table :paginate="$this->users">
                 <flux:table.columns>
-                    <flux:table.column sortable :sorted="$sortBy === 'id'" :direction="$sortDirection" wire:click="sort('id')">Id</flux:table.column>
-                    <flux:table.column sortable :sorted="$sortBy === 'name'" :direction="$sortDirection" wire:click="sort('name')">Name</flux:table.column>
-                    <flux:table.column sortable :sorted="$sortBy === 'email'" :direction="$sortDirection" wire:click="sort('email')">Email</flux:table.column>
-                    <flux:table.column>Roles</flux:table.column>
+                    <flux:table.column sortable :sorted="$sortBy === 'name'" :direction="$sortDirection" wire:click="sort('name')">{{ __('Name') }}</flux:table.column>
+                    
+                    <flux:table.column sortable :sorted="$sortBy === 'email'" :direction="$sortDirection" wire:click="sort('email')">{{ __('Mail') }}</flux:table.column>
+                    
+                    <flux:table.column>{{ __('Roles') }}</flux:table.column>
+                    
                     <flux:table.column />
                 </flux:table.columns>
 
                 <flux:table.rows>
                     @foreach ($this->users as $user)
                         <flux:table.row :key="$user->id">
-                            <flux:table.cell>
-                                {{ $user->id }}
-                            </flux:table.cell>
-
                             <flux:table.cell class="flex items-center gap-3">
                                 <flux:avatar size="xs"
                                     :initials="$user->initials()"

@@ -70,14 +70,14 @@ new class extends Component {
 <flux:modal wire:model.self="showModal">
     <div class="space-y-6">
         <flux:heading size="lg">
-            Editar usuario
+            {{ __('Edit user') }}
         </flux:heading>
 
-        <flux:input wire:model="name" label="Nombre" />
-        <flux:input wire:model="email" label="Email" />
+        <flux:input wire:model="name" label="{{ __('User name') }}" />
+        <flux:input wire:model="email" label="{{ __('User mail') }}" />
 
         <div>
-            <label class="block text-sm mb-2">Roles</label>
+            <label class="block text-sm mb-2">{{ __('Roles') }}</label>
 
             <div class="flex-col space-y-2">
                 @foreach($this->availableRoles as $role)
@@ -92,11 +92,11 @@ new class extends Component {
 
         <div class="flex justify-end gap-3">
             <flux:button wire:click="$set('showModal', false)">
-                Cancelar
+                {{ __('Cancel') }}
             </flux:button>
 
             <flux:button variant="primary" wire:click="edit" wire:loading.attr="disabled">
-                Guardar
+                {{ __('Save') }}
             </flux:button>
         </div>
     </div>
