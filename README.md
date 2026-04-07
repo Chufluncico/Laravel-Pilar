@@ -13,10 +13,11 @@ composer install
 npm install
 npm run build
 
-/* Configurar archivio .env */
+cp .env.example .env
+php artisan key:generate
 
 php artisan migrate --seed
 
 composer run dev
 ```
-
+Logueate con el usuario **superadmin@example.com** y contraseña **thx1138**
